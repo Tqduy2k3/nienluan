@@ -53,6 +53,7 @@ components:
           format: binary
           writeOnly: true
           description: The avatar file of the product (image)
+
     Cart:
       type: object
       properties:
@@ -122,6 +123,30 @@ components:
                 type: integer
                 description: Quantity of the product in the order
 
+    Chat:
+      type: object
+      properties:
+        C_id:
+          type: integer
+          readOnly: true
+          description: The unique identifier for the chat
+        C_id_from:
+          type: integer
+          description: ID of the user who sent the chat
+        C_id_to:
+          type: integer
+          description: ID of the user who received the chat
+        C_content:
+          type: string
+          description: Content of the chat message
+        C_status:
+          type: integer
+          description: Status of the chat message (e.g., 0 for unread, 1 for read)
+        C_time:
+          type: string
+          format: date-time
+          description: Timestamp when the chat was sent
+
   parameters:
     userIdParam:
       name: id
@@ -150,6 +175,14 @@ components:
     orderIdParam:
       name: id
       description: Order ID
+      in: path
+      required: true
+      schema:
+        type: integer
+
+    chatIdParam:
+      name: C_id
+      description: Chat ID
       in: path
       required: true
       schema:
