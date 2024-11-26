@@ -1,0 +1,236 @@
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        U_ID:
+          type: integer
+          readOnly: true
+          description: The unique identifier for the user
+        U_username:
+          type: string
+          description: User's username
+        U_password:
+          type: string
+          description: User's password (hashed)
+        U_phone:
+          type: string
+          description: User's phone number (10 digits)
+        U_address:
+          type: string
+          description: User's address
+        U_role:
+          type: string
+          description: User's role (e.g., 'admin', 'user')
+        U_created_at:
+          type: string
+          format: date-time
+          description: The timestamp when the user was created
+
+    Product:
+      type: object
+      properties:
+        P_ID:
+          type: integer
+          readOnly: true
+          description: The unique identifier for the product
+        P_name:
+          type: string
+          description: Name of the product
+        P_price:
+          type: number
+          format: float
+          description: Price of the product
+        P_description:
+          type: string
+          description: Detailed description of the product
+        P_image_url:
+          type: string
+          readOnly: true
+          description: URL of the product's image
+        P_avatarFile:
+          type: string
+          format: binary
+          writeOnly: true
+          description: The avatar file of the product (image)
+    Cart:
+      type: object
+      properties:
+        C_id:
+          type: integer
+          readOnly: true
+          description: Cart ID
+        U_id:
+          type: integer
+          description: User ID associated with this cart
+
+    Adding_Products:
+      type: object
+      properties:
+        C_ID:
+          type: integer
+          description: Cart ID associated with the product
+        P_ID:
+          type: integer
+          description: Product ID added to the cart
+        AP_quantity:
+          type: integer
+          description: Quantity of the product in the cart
+          example: 2
+
+    Order:
+      type: object
+      properties:
+        O_ID:
+          type: integer
+          readOnly: true
+          description: Unique identifier for the order
+        U_ID:
+          type: integer
+          description: User ID who made the order
+        C_ID:
+          type: integer
+          description: Cart ID associated with the order
+        O_total_price:
+          type: number
+          format: float
+          description: Total price of the order
+        O_status:
+          type: string
+          description: Status of the order (e.g., 'pending', 'completed', 'canceled')
+        O_created:
+          type: string
+          format: date-time
+          description: Timestamp when the order was created
+        products:
+          type: array
+          description: List of products in the order
+          items:
+            type: object
+            properties:
+              P_ID:
+                type: integer
+                description: Product ID
+              P_name:
+                type: string
+                description: Name of the product
+              AP_price:
+                type: number
+                format: float
+                description: Price of the product at the time of adding to the cart
+              AP_quantity:
+                type: integer
+                description: Quantity of the product in the order
+
+  parameters:
+    userIdParam:
+      name: id
+      description: User ID
+      in: path
+      required: true
+      schema:
+        type: integer
+
+    productIdParam:
+      name: P_id
+      description: Product ID
+      in: path
+      required: true
+      schema:
+        type: integer
+
+    cartIdParam:
+      name: id
+      description: Cart ID
+      in: path
+      required: true
+      schema:
+        type: integer
+
+    orderIdParam:
+      name: id
+      description: Order ID
+      in: path
+      required: true
+      schema:
+        type: integer
+
+    limitParam:
+      name: limit
+      description: Number of records per page
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 9
+        minimum: 1
+        maximum: 100
+
+    pageParam:
+      name: page
+      description: Page number of records
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 1
+        minimum: 1
+
+  responses:
+    200NoData:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                description: The response status
+                enum:
+                  - success
+              data:
+                type: object
+                nullable: true
+                description: The response data
+
+    400BadRequest:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                description: The response status
+                enum:
+                  - error
+              message:
+                type: string
+                description: The error message
+
+    404NotFound:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                description: The response status
+                enum:
+                  - error
+              message:
+                type: string
+                description: The error message
+
+    500InternalServerError:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+              message:
+                type: string
+                description: Internal Server Error
