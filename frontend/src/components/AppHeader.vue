@@ -41,7 +41,15 @@
             <span class="badge bg-danger">{{ cartItemCount }}</span>
           </a>
         </div>
-
+        <div class="nav-item me-3">
+          <router-link
+            to="/chat"
+            class="nav-link"
+          >
+            <i class="fas fa-comment-alt"></i>
+            <span class="d-none d-sm-inline">Chat</span>
+          </router-link>
+        </div>
         <!-- Logout Button -->
         <button
           @click="logout"
@@ -141,5 +149,9 @@ const logout = () => {
 .btn-outline-light:hover {
   color: #000;
   background-color: #fff;
+}
+.nav-item .fa-comment-alt {
+  font-size: 1.5rem;
+  margin-right: 5px;
 }
 </style>

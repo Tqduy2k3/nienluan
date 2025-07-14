@@ -1,0 +1,152 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hello there
+      - good morning
+      - good evening
+      - Chào
+      - Xin chào
+      - Hello
+      - Hi
+
+  - intent: goodbye
+    examples: |
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+
+  - intent: mood_great
+    examples: |
+      - perfect
+      - great
+      - amazing
+      - feeling like a king
+      - wonderful
+      - I am feeling very good
+      - I am great
+      - I am amazing
+      - I am going to save the world
+      - super stoked
+      - extremely good
+      - so so perfect
+      - so good
+      - so perfect
+
+  - intent: mood_unhappy
+    examples: |
+      - my day was horrible
+      - I am sad
+      - I don't feel very well
+      - I am disappointed
+      - super sad
+      - I'm so sad
+      - sad
+      - very sad
+      - unhappy
+      - not good
+      - not very good
+      - extremely sad
+      - so saad
+      - so sad
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+
+  - intent: ask_product_info
+    examples: |
+      - Tôi muốn biết thêm về sản phẩm [iPhone 14](product_name)
+      - Sản phẩm [Samsung Galaxy](product_name) có gì đặc biệt?
+      - Giá của [MacBook Pro](product_name) là bao nhiêu?
+      - Tính năng của [iPhone 12](product_name) là gì?
+      - Bạn có thể cho tôi biết thêm về sản phẩm [Galaxy Note 20](product_name)?
+      - Bạn có sản phẩm [iPhone](product_name) không?
+      - do you have [iPhone](product_name)?
+      - Tôi muốn biết chi tiết về [iPhone 13](product_name)
+      - [iPhone 14](product_name) có những đặc điểm gì mới?
+      - [Samsung Galaxy S21](product_name) có tính năng gì nổi bật?
+      - [MacBook Air](product_name) có những cải tiến nào?
+      - Bạn có thể nói cho tôi biết về [Samsung Galaxy Note 10](product_name)?
+      - Sản phẩm [Google Pixel 6](product_name) có gì đáng chú ý?
+      - Giá của [iPhone 11](product_name) là bao nhiêu?
+      - Bạn có bán [iPhone 12 Pro Max](product_name) không?
+      - Có thể cho tôi biết về các tính năng của [Apple Watch Series 7](product_name)?
+      - [Huawei Mate 40 Pro](product_name) có camera thế nào?
+      - Tính năng của [OnePlus 9 Pro](product_name) như thế nào?
+      - Bạn có sản phẩm [Xiaomi Mi 11](product_name) không?
+      - Mô tả về [iPhone SE](product_name) cho tôi được không?
+      - [Sony Xperia 1 II](product_name) có gì đặc biệt?
+      - Sản phẩm [Google Pixel 5](product_name) có hỗ trợ 5G không?
+      - Bạn có [iPad Pro](product_name) không?
+      - [OnePlus Nord](product_name) có màu sắc nào?
+      - Có thông tin gì về sản phẩm [MacBook Pro M1](product_name) không?
+      - Sản phẩm [Oppo Find X3 Pro](product_name) có tính năng nào đáng chú ý?
+      - [Vivo X60 Pro](product_name) có camera zoom quang học không?
+      - Bạn có bán [iPhone XR](product_name) không?
+      - Bạn có thể cung cấp thông tin về [iPhone 13 Pro Max](product_name)?
+      - Tính năng của [Xiaomi Mi 10T Pro](product_name) là gì?
+      - Bạn có thể cho tôi biết thông tin chi tiết về [Sony Xperia 5 II](product_name)?
+      - [Samsung Galaxy A72](product_name) có hỗ trợ sạc nhanh không?
+      - Tính năng nổi bật của [Realme GT 5G](product_name) là gì?
+      - Giá của [Oppo Reno 5](product_name) như thế nào?
+      - [OnePlus 8T](product_name) có hỗ trợ sạc nhanh bao nhiêu watt?
+      - [Samsung Galaxy Z Fold 3](product_name) có tính năng màn hình gập không?
+      - Mô tả chi tiết về [Apple Watch Series 6](product_name).
+      - Bạn có bán [iPhone 8](product_name) không?
+      - [Huawei P40 Pro](product_name) có hỗ trợ 5G không?
+      - Bạn có thể cho tôi biết thêm về [Asus ROG Phone 5](product_name)?
+      - [Realme X50 Pro](product_name) có màn hình 90Hz không?
+      - [Nokia 8.3 5G](product_name) có hỗ trợ 5G không?
+      - Sản phẩm [Google Pixel 4a](product_name) có camera thế nào?
+      - [Xiaomi Redmi Note 10](product_name) có sạc nhanh không?
+      - Bạn có [iPad Air](product_name) không?
+      - [Samsung Galaxy A52](product_name) có hỗ trợ chống nước không?
+      - Bạn có [iPhone 7](product_name) không?
+      - Bạn có thể cung cấp thông tin chi tiết về [Vivo V21e](product_name)?
+      - [Nokia 7.2](product_name) có camera AI không?
+      - Bạn có bán [Huawei Y9s](product_name) không?
+      - Bạn có thể giới thiệu cho tôi về [Sony Xperia 10 II](product_name)?
+      - [Xiaomi Mi 11 Ultra](product_name) có camera siêu zoom không?
+      - Thông tin về [Samsung Galaxy M32](product_name) là gì?
+      - [Oppo A93](product_name) có hỗ trợ sạc nhanh không?
+      - Bạn có thể cho tôi biết về sản phẩm [OnePlus 7T Pro](product_name)?
+      - Tính năng của [iPhone X](product_name) như thế nào?
+
+  - intent: check_database_connection
+    examples: |
+      - Kiểm tra kết nối cơ sở dữ liệu
+      - Kiểm tra cơ sở dữ liệu
+      - Kết nối cơ sở dữ liệu

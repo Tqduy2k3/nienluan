@@ -20,6 +20,11 @@ export default defineConfig({
       '/public': {
         target: 'http://localhost:3000/',
         changeOrigin: true
+      },
+      '/chat': {
+        target: 'http://localhost:5005/webhooks/rest/webhook',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/chat/, '')
       }
     }
   }

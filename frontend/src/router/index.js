@@ -6,6 +6,7 @@ import editProduct from '@/views/editProduct.vue';
 import addProduct from '@/views/addProduct.vue';
 import ProductDetails from '@/views/productDetails.vue';
 import editOrder from '@/views/editOrder.vue';
+import Chatpage from '@/views/Chatpage.vue';
 const routes = [
   {
     path: '/homepage',
@@ -16,6 +17,11 @@ const routes = [
     path: '/manager',
     name: 'manager',
     component: manager
+  },
+  {
+    path: '/chat',
+    name: 'Chat',
+    component: Chatpage
   },
   {
     path: '/editUser',

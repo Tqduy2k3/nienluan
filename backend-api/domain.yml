@@ -1,0 +1,43 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - action_provide_product_info
+  - check_database_connection
+  - ask_product_info
+
+entities:
+  - product_name
+
+responses:
+  utter_greet:
+    - text: "Chào bạn! Tôi có thể giúp gì cho bạn về sản phẩm?"
+
+  utter_cheer_up:
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+    - text: "Did that help you?"
+
+  utter_happy:
+    - text: "Tạm biệt! Hẹn gặp lại bạn."
+
+  utter_goodbye:
+    - text: "Bye"
+
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+actions: # Đảm bảo phần 'actions' nằm ở ngoài 'responses' và không bị lồng vào
+  - action_provide_product_info # Đây là hành động tùy chỉnh của bạn
+  - action_check_database_connection
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
